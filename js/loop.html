@@ -1,25 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
+
+    <!DOCTYPE html>
+<html>
 <head>
+    <title>Table of 2 and 3 with Odd/Even</title>
 </head>
 <body>
-     <script>
-    //var i;
-   // for(i=1;i<=10;i++){
-   //     document.write("abes <br>");
-   // }
-  // var a=1 ;
-  // while(a<=5){
-  //  document.write("python <br>");
- //   a++;
- //  }
- var a=1;
- do{
-    document.write("java <br>");
-    a++;
+ 
+  
+   
 
- }
- while(a<=5);
-   </script>
+    <table border="1" cellspacing="0" cellpadding="5"
+        <tr>
+            <th>Expression</th>
+            <th>Result</th>
+            <th>Odd/Even</th>
+        </tr>
+        <script>
+            var n = 2;
+            var o = 3;
+
+         
+            for (var i = 1; i <= 10; i++) {
+                var result = i * n;
+                var type = (result % 2 == 0) ? "Even" : "Odd";
+                document.write("<tr><td>" + n + " × " + i + "</td><td>" + result + "</td><td>" + type + "</td></tr>");
+            }
+
+            for (var i = 1; i <= 10; i++) {
+                var result = i * o;
+                var type = (result % 2 == 0) ? "Even" : "Odd";
+                document.write("<tr><td>" + o + " × " + i + "</td><td>" + result + "</td><td>" + type + "</td></tr>");
+            }
+        </script>
+    </table>
+
 </body>
 </html>
+
+      
+    
+
