@@ -8,10 +8,10 @@
 <body>
     <p id="adi"></p>
     <script>
-    let hello= function(){
-        return "Hello World";
+    function hello(a,b=1){
+        return a*b;
     }
-        document.getElementById("adi").innerHTML=hello("Hello World");
+        document.write(hello(5));
     </script>
 
 </body>
