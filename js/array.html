@@ -1,20 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   
+    <title>Branch Matching</title>
+    <style>
+        .card {
+            border: 1px solid #444;
+            border-radius: 10px;
+            padding: 15px;
+            
+            width: 250px;
+            background: #f9f9f9;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+        }
+        #matched, #notmatched {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        h2 {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <p id="hb"></p>
-   <script>
-     // var arr=["apple","banana","grapes"];
-      //arr[2]="mango";
-    // document.getElementById("hb").innerHTML=arr[0];
-    const fruits= {
-        firstname:"apple",
-        lastname:"banana",
-        age:20
-    };
-    document.getElementById("hb").innerHTML=fruits.firstname;
-   </script>
+    <h2>Matched Branch Students</h2>
+    <div id="matched"></div>
+
+    <h2>Unmatched Branch Students</h2>
+    <div id="notmatched"></div>
+
+    <script>
+        const students = [
+            { name: "Dhruv", rollno: 11, branch: "CSE" },
+            { name: "Suryansh", rollno: 13, branch: "CSE" },
+            { name: "Tejash", rollno: 16, branch: "CS" },
+            { name: "Manik", rollno: 12, branch: "CSE" },
+            { name: "Unnati", rollno: 18, branch: "IT" }
+        ];
+
+        const matchedDiv = document.getElementById("matched");
+        const notMatchedDiv = document.getElementById("notmatched");
+
+        
+        const branchGroups = {};
+        students.forEach(stu => {
+            if (!branchGroups[stu.branch]) {
+                branchGroups[stu.branch] = [];
+            }
+            branchGroups[stu.branch].push(stu);
+        });
+
+        for (let branch in branchGroups) {
+            const card = document.createElement("div");
+            card.className = "card";
+
+          
+            card.innerHTML = `<h3>Branch: ${branch}</h3>`;
+
+            branchGroups[branch].forEach(stu => {
+                card.innerHTML += `${stu.name} (Roll No: ${stu.rollno})<br>`;
+            });
+
+            
+            if (branchGroups[branch].length > 1) {
+                matchedDiv.appendChild(card);
+            } else {
+                notMatchedDiv.appendChild(card);
+            }
+        }
+    </script>
 </body>
 </html>
