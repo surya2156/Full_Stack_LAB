@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Do List</title>
+  <style>
+    h {
+      text-align: center;
+      font-size: 30px;
+      color: blue;
+    }
+    #myDIV2 {
+      text-align: center;
+      font-size: 30px;
+      color: blue;
+    }
+    #myDIV {
+      text-align: center;
+      font-size: 50px;
+      color: green;
+    }
+    button {
+      font-size: 20px;
+      color: green;
+      margin: 5px;
+    }
+    #demo {
+      text-align: center;
+      font-size: 20px;
+      color: red;
+      margin-top: 20px;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      background: #f2f2f2;
+      margin: 5px auto;
+      padding: 10px;
+      width: 50%;
+      border-radius: 5px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div id="myDIV2">
+    <h>To do list</h>
+  </div>
+  <div id="demo">
+    <h>ADD THE ITEMS IN THE LIST..</h>
+  </div>
+  <div id="myDIV">
+    <input type="text" id="task1" placeholder="">
+    <button onclick="addTask('task1')">+</button><br>
+
+    <input type="text" id="task2" placeholder="">
+    <button onclick="addTask('task2')">+</button><br>
+
+    <input type="text" id="task3" placeholder="">
+    <button onclick="addTask('task3')">+</button><br>
+
+    <button onclick="showList()">LIST OF ALL</button>
+  </div>
+
+  <script>
+    let tasks = [];
+
+  
+    function addTask(id) {
+      const input = document.getElementById(id);
+      if (input.value.trim() !== "") {
+        tasks.push(input.value);
+        updateList();
+        input.value = ""; 
+      } else {
+        document.getElementById("demo").innerText = "Please enter a task!";
+      }
+    }
+
+  
+    function showList() {
+      updateList();
+    }
+
+   
+    function updateList() {
+      const demo = document.getElementById("demo");
+      demo.innerHTML = "<ul>" + tasks.map(task => `<li>${task}</li>`).join("") + "</ul>";
+    }
+  </script>
+</body>
+</html>
