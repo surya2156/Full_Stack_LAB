@@ -7,16 +7,34 @@
 </head>
 <body>
     <script>
-        function myfun(a,b){
-            console.log(a+b);
+        //function myfun(a,b){
+           // console.log(a+b);
 
            
-        }
-        function myfun2(a,b,sumcallback){
+      //  }
+      //  function myfun2(a,b,sumcallback){
             
-            sumcallback(a,b);
-        }
-        myfun2(5,10,myfun);
+        //    sumcallback(a,b);
+       // }
+     //   myfun2(5,10,myfun);
+
+     function getdata(dataid){
+        setTimeout(() => {
+            console.log("data " , dataid);
+            if(dataid){
+                console.log();
+            }
+        }, 2000);
+     }
+     getdata(5,()=>{
+        getdata(10,()=>{
+            getdata(15,()=>{
+               
+            });
+        });
+
+     });
+
     </script>
 </body>
 </html>
