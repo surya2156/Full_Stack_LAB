@@ -17,12 +17,12 @@
         //    sumcallback(a,b);
        // }
      //   myfun2(5,10,myfun);
-
-     function getdata(dataid){
+//callback hell
+     function getdata(dataid, getNextData){
         setTimeout(() => {
             console.log("data " , dataid);
-            if(dataid){
-                console.log();
+            if(getNextData){
+                getNextData();
             }
         }, 2000);
      }
