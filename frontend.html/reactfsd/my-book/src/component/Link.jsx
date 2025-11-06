@@ -1,38 +1,21 @@
 import React from "react";
-import { Link as RouterLink, Routes, Route } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 import './navigation.css';
 
-// Home component
-function Home() {
-    return (
-        <div className="page">
-            <h1>Welcome to my Home page</h1>
-        </div>
-    );
-}
-
-// About component
-function About() {
-    return (
-        <div className="page">
-            <h1>This is my About page</h1>
-        </div>
-    );
-}
-
-// Navigation component
 function Navigation() {
     return (
-        <div>
+        <header>
             <nav className="navigation">
-                <RouterLink to="/" className="nav-link">Home</RouterLink>
-                <RouterLink to="/about" className="nav-link">About</RouterLink>
+                <div className="nav-brand">
+                    <RouterLink to="/" className="brand-link">BookStore</RouterLink>
+                </div>
+                <div className="nav-links">
+                    <RouterLink to="/" className="nav-link">Home</RouterLink>
+                    <RouterLink to="/books" className="nav-link">Books</RouterLink>
+                    <RouterLink to="/login" className="nav-link">Login</RouterLink>
+                </div>
             </nav>
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-            </Routes>
-        </div>
+        </header>
     );
 }
 
