@@ -1,20 +1,52 @@
-#book{
-    border: 5px solid red;
+#book {
+    border: 2px solid #ddd;
+    border-radius: 8px;
     width: 300px;
-    height: 400px;
+    height: auto;
+    padding: 20px;
     background-color: white;
-
-
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    text-align: center;
 }
-button{
-    height: 60px;
-    width: 100px;
+
+#book img {
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+#book h1 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #333;
+}
+
+.counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+button {
+    height: 40px;
+    width: 40px;
     font-size: 20px;
-    background-color: chartreuse;
-    color: black;
-
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
-span{
-    font-size: 30px;
-    
+
+button:hover {
+    background-color: #45a049;
+}
+
+span {
+    font-size: 24px;
+    color: #333;
+    min-width: 30px;
 }

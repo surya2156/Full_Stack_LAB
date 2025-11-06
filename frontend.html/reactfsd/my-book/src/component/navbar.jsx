@@ -1,9 +1,9 @@
 import React from "react";
-function nav(){
-    return(
-        <div id="nav">
-            
-        </div>
-        <img src="" alt=""></img>
-    )
+// src/component/navbar.jsx
+export default function Navbar() {
+  return (
+    <nav>
+      <h1>Navbar</h1>
+    </nav>
+  );
 }
